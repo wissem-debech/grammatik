@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Adjektivendungen</title>
+<title>مراجعة Grammatik</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -26,7 +26,9 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Cairo,system-
 .langs button{font:600 14px Cairo,sans-serif;min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
 .langs button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 6px;font-weight:800;text-wrap:balance}
-h1 .ltr{color:var(--blue);font-family:Cairo,sans-serif}
+h1 .de-w{color:var(--blue)}
+.topic{font-size:20px;font-weight:600;margin:0 0 2px}
+footer{margin-top:48px;padding-top:18px;border-top:1.5px solid var(--line);color:var(--soft);font-size:14px;text-align:center}
 .sub{color:var(--soft);margin:0 0 22px}
 .levels{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
 .lv{font:600 14px Cairo,sans-serif;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:8px 14px;min-height:44px;cursor:pointer;display:flex;align-items:center;gap:6px}
@@ -90,7 +92,8 @@ td.g{font:600 12px Cairo;color:var(--soft)}
 <div class="langs" id="langs" role="group" aria-label="Language">
   <button data-l="ar" lang="ar">العربية</button><button data-l="fr" lang="fr">Français</button><button data-l="en" lang="en">English</button>
 </div>
-<h1><span id="h1t"></span> <bdi dir="ltr" class="ltr">Adjektivendungen</bdi></h1>
+<h1 id="h1t"></h1>
+<p class="topic" id="topic"></p>
 <p class="sub" id="sub"></p>
 
 <div class="levels" id="levels"></div>
@@ -108,12 +111,13 @@ td.g{font:600 12px Cairo;color:var(--soft)}
 <h2 id="tablesT"></h2>
 <div class="tables" id="tables"></div>
 <ul class="tips" id="tips"></ul>
+<footer id="foot"></footer>
 </div>
 
 <script>
 {
 const T={
-ar:{dir:"rtl",title:"تمارين نهايات الصفات",h1:"نهايات الصفات",sub:"Nominativ · Akkusativ · Dativ — سبعة مستويات من الأسهل إلى الأصعب، 92 تمرينًا، مع تصحيح وشرح فوري.",
+ar:{dir:"rtl",title:"مراجعة Grammatik",h1:"مراجعة",h1b:"Grammatik",topic:"نهايات الصفات — Adjektivendungen",foot:"© 2026 وسام دبش — Wissem Debech. جميع الحقوق محفوظة.",sub:"Nominativ · Akkusativ · Dativ — سبعة مستويات من الأسهل إلى الأصعب، 92 تمرينًا، مع تصحيح وشرح فوري.",
 lv:["Nominativ","Akkusativ","Dativ","حدّد الحالة","مختلط","كتابة","صحيح أم خطأ؟"],
 task:["اختر نهاية الصفة (الفاعل)","اختر نهاية الصفة (المفعول به)","اختر نهاية الصفة (Dativ)","ما حالة الجزء الملوّن؟","حدّد الحالة في ذهنك، ثم اختر النهاية","اكتب الأداة والصفة معًا بالشكل الصحيح","هل الجملة صحيحة؟"],
 R:"صحيح",W:"خطأ",check:"تحقّق",next:"السؤال التالي ←",seeRes:"عرض النتيجة",ok:"✓ أحسنت، إجابة صحيحة!",yours:"✗ إجابتك:",right:"الصحيح:",
@@ -125,7 +129,7 @@ tips:["<b>القاعدة الذهبية:</b> يجب أن يظهر الجنس و�
 "<b>Dativ:</b> بعد أي أداة النهاية دائمًا [[-en]]. وفي الجمع يأخذ الاسم [[-n]]: [[den Kindern]].",
 "<b>Akkusativ:</b> [[durch, für, gegen, ohne, um]] · <b>Dativ:</b> [[aus, bei, mit, nach, seit, von, zu]] وأفعال مثل [[helfen, danken, gefallen]].",
 "<b>[[in, an, auf, unter…]]</b>: «أين؟» ← Dativ · «إلى أين؟» ← Akkusativ."]},
-fr:{dir:"ltr",title:"Exercices : terminaisons des adjectifs",h1:"Terminaisons des adjectifs",sub:"Nominativ · Akkusativ · Dativ — sept niveaux du plus facile au plus difficile, 92 exercices, avec correction et explication immédiates.",
+fr:{dir:"ltr",title:"Révision Grammatik",h1:"Révision",h1b:"Grammatik",topic:"Les terminaisons des adjectifs — Adjektivendungen",foot:"© 2026 Wissem Debech — وسام دبش. Tous droits réservés.",sub:"Nominativ · Akkusativ · Dativ — sept niveaux du plus facile au plus difficile, 92 exercices, avec correction et explication immédiates.",
 lv:["Nominativ","Akkusativ","Dativ","Trouve le cas","Mélange","Écriture","Vrai ou faux ?"],
 task:["Choisis la terminaison de l'adjectif (sujet)","Choisis la terminaison de l'adjectif (complément d'objet direct)","Choisis la terminaison de l'adjectif (datif)","À quel cas est la partie surlignée ?","Trouve d'abord le cas dans ta tête, puis choisis la terminaison","Écris l'article et l'adjectif à la bonne forme","Cette phrase est-elle correcte ?"],
 R:"Vrai",W:"Faux",check:"Vérifier",next:"Question suivante →",seeRes:"Voir le résultat",ok:"✓ Bravo, c'est juste !",yours:"✗ Ta réponse :",right:"La bonne :",
@@ -137,7 +141,7 @@ tips:["<b>Règle d'or :</b> le genre et le cas doivent apparaître une fois. Si 
 "<b>Dativ :</b> après n'importe quel article, la terminaison est toujours [[-en]]. Au pluriel, le nom prend [[-n]] : [[den Kindern]].",
 "<b>Akkusativ :</b> [[durch, für, gegen, ohne, um]] · <b>Dativ :</b> [[aus, bei, mit, nach, seit, von, zu]] et des verbes comme [[helfen, danken, gefallen]].",
 "<b>[[in, an, auf, unter…]]</b> : « où ? » → datif · « vers où ? » → accusatif."]},
-en:{dir:"ltr",title:"Adjective endings practice",h1:"Adjective endings",sub:"Nominativ · Akkusativ · Dativ — seven levels from easiest to hardest, 92 exercises, with instant corrections and explanations.",
+en:{dir:"ltr",title:"Grammatik review",h1:"Review",h1b:"Grammatik",topic:"Adjective endings — Adjektivendungen",foot:"© 2026 Wissem Debech — وسام دبش. All rights reserved.",sub:"Nominativ · Akkusativ · Dativ — seven levels from easiest to hardest, 92 exercises, with instant corrections and explanations.",
 lv:["Nominativ","Akkusativ","Dativ","Find the case","Mixed","Writing","Right or wrong?"],
 task:["Choose the adjective ending (subject)","Choose the adjective ending (direct object)","Choose the adjective ending (dative)","Which case is the highlighted part in?","Work out the case in your head first, then choose the ending","Type the article and the adjective in the correct form","Is this sentence correct?"],
 R:"Right",W:"Wrong",check:"Check",next:"Next question →",seeRes:"See the result",ok:"✓ Well done, that's right!",yours:"✗ Your answer:",right:"Correct:",
@@ -268,8 +272,8 @@ const lab=(l,v)=>l.tf?t()[v]:l.word||l.w?v:"-"+v;
 function drawStatic(){
  const x=t();document.documentElement.lang=lang;document.documentElement.dir=x.dir;document.title=x.title;
  document.querySelectorAll("#langs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l==lang));
- $("h1t").textContent=x.h1;$("sub").textContent=x.sub;$("shufT").textContent=x.shuf;$("reset").textContent=x.reset;$("tablesT").textContent=x.tables;
- $("tips").innerHTML=x.tips.map(s=>`<li>${s.replace(/\[\[(.+?)\]\]/g,(_,m)=>iso(m))}</li>`).join("");
+ $("h1t").innerHTML=lang=="en"?`<span class="de-w">${x.h1b}</span> ${x.h1}`:`${x.h1} <span class="de-w">${x.h1b}</span>`;$("topic").textContent=x.topic;$("foot").innerHTML=`<bdi>${esc(x.foot)}</bdi>`;$("sub").textContent=x.sub;$("shufT").textContent=x.shuf;$("reset").textContent=x.reset;$("tablesT").textContent=x.tables;
+ $("tips").innerHTML=x.tips.map(s=>`<li>${s.replace(/\[\[(.+?)\]\]/g,(_,m)=>m.length<20?iso(m).replace("<bdi ","<bdi style=\"white-space:nowrap\" "):iso(m))}</li>`).join("");
  $("tables").innerHTML=TB.map(([n,r])=>`<div class="tb"><h3>${n}</h3><table><thead><tr><th></th><th>ein-</th><th>der-</th><th>${esc(x.none)}</th></tr></thead><tbody>${r.map(y=>`<tr><td class="g">${y[0]}</td><td>${mark(y[1])}</td><td>${mark(y[2])}</td><td>${mark(y[3])}</td></tr>`).join("")}</tbody></table></div>`).join("");
 }
 function drawLevels(){

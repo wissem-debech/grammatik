@@ -1,4 +1,4 @@
-# Adjektivendungen — German adjective endings practice
+# مراجعة Grammatik — German adjective endings practice
 
 Practice German adjective endings in the **Nominativ**, **Akkusativ** and **Dativ**, from easiest to hardest, with instant correction and an explanation for every answer.
 
@@ -33,3 +33,7 @@ The interface is available in **Arabic, French and English**. Use the buttons at
 It's one file with no dependencies. Open `index.html` in any browser.
 
 To put it online, turn on **GitHub Pages** in the repository's settings (Settings → Pages → Deploy from branch → `main` / root).
+
+## Copyright
+
+© 2026 وسام دبش — Wissem Debech. All rights reserved.
