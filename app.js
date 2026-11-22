@@ -8,19 +8,22 @@ lessons:"الدروس",ex:"تمرينًا",lvls:"مستويات",done:"أنجز�
 R:"صحيح",W:"خطأ",check:"تحقّق",next:"السؤال التالي ←",seeRes:"عرض النتيجة",ok:"✓ أحسنت، إجابة صحيحة!",yours:"✗ إجابتك:",right:"الصحيح:",
 empty:"اكتب إجابة أولًا",answer:"الإجابة",result:"النتيجة",m3:"ممتاز! أتقنت هذا المستوى.",m2:"جيد جدًا! راجع أخطاءك ثم أعد المحاولة.",m1:"راجع الجدول أسفل الصفحة ثم أعد المستوى.",
 mist:"أخطاؤك مع التصحيح:",redoW:"أعد الأسئلة الخاطئة فقط",redoA:"أعد المستوى كاملًا",nextL:"المستوى التالي:",shuf:"ترتيب عشوائي للأسئلة",reset:"مسح نتائج هذا الدرس",
-foot:"© 2026 وسام دبش — Wissem Debech. جميع الحقوق محفوظة."},
+foot:"© 2026 Wissem Debech. جميع الحقوق محفوظة.",
+search:"ابحث عن درس أو كلمة…",clear:"مسح البحث",res:"نتائج البحث",inLes:"الدروس",inEx:"في التمارين",noRes:"لا توجد نتائج لـ",more:"اكتب كلمة أدق لرؤية المزيد."},
 fr:{dir:"ltr",title:"Révision Grammatik",app:"Révision",sub:"Révise la grammaire allemande leçon par leçon : des tableaux clairs, puis des exercices du plus facile au plus difficile, avec une correction et une explication immédiates.",
 lessons:"Leçons",ex:"exercices",lvls:"niveaux",done:"Réussi",soon:"De nouvelles leçons arrivent bientôt.",back:"← Toutes les leçons",rule:"La règle ↓",
 R:"Vrai",W:"Faux",check:"Vérifier",next:"Question suivante →",seeRes:"Voir le résultat",ok:"✓ Bravo, c'est juste !",yours:"✗ Ta réponse :",right:"La bonne :",
 empty:"Écris d'abord une réponse",answer:"Réponse",result:"Résultat",m3:"Excellent ! Tu maîtrises ce niveau.",m2:"Très bien ! Revois tes erreurs, puis réessaie.",m1:"Revois les tableaux en bas de la page, puis refais le niveau.",
 mist:"Tes erreurs, avec la correction :",redoW:"Refaire seulement les questions ratées",redoA:"Refaire tout le niveau",nextL:"Niveau suivant :",shuf:"Questions dans un ordre aléatoire",reset:"Effacer les résultats de cette leçon",
-foot:"© 2026 Wissem Debech — وسام دبش. Tous droits réservés."},
+foot:"© 2026 Wissem Debech. Tous droits réservés.",
+search:"Chercher une leçon, un mot…",clear:"Effacer la recherche",res:"Résultats de la recherche",inLes:"Leçons",inEx:"Dans les exercices",noRes:"Aucun résultat pour",more:"Précise ta recherche pour en voir plus."},
 en:{dir:"ltr",title:"Grammatik review",app:"Review",sub:"Review German grammar one lesson at a time: clear tables, then exercises from easiest to hardest, with an instant correction and explanation for every answer.",
 lessons:"Lessons",ex:"exercises",lvls:"levels",done:"Done",soon:"New lessons are coming soon.",back:"← All lessons",rule:"The rule ↓",
 R:"Right",W:"Wrong",check:"Check",next:"Next question →",seeRes:"See the result",ok:"✓ Well done, that's right!",yours:"✗ Your answer:",right:"Correct:",
 empty:"Type an answer first",answer:"Answer",result:"Result",m3:"Excellent! You've mastered this level.",m2:"Very good! Review your mistakes, then try again.",m1:"Review the tables at the bottom of the page, then redo the level.",
 mist:"Your mistakes, corrected:",redoW:"Redo only the questions I got wrong",redoA:"Redo the whole level",nextL:"Next level:",shuf:"Shuffle the questions",reset:"Clear this lesson's results",
-foot:"© 2026 Wissem Debech — وسام دبش. All rights reserved."}};
+foot:"© 2026 Wissem Debech. All rights reserved.",
+search:"Search lessons or words…",clear:"Clear search",res:"Search results",inLes:"Lessons",inEx:"In the exercises",noRes:"No results for",more:"Type a more specific word to see more."}};
 const EX={ar:2,fr:3,en:4};
 const LS=window.LESSONS||[];
 
@@ -49,9 +52,11 @@ function frame(){
  document.querySelectorAll("#langs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l==lang));
  $("brand").innerHTML=lang=="en"?`<span>Grammatik</span> ${x.app}`:`${x.app} <span>Grammatik</span>`;
  $("foot").innerHTML=`<bdi>${esc(x.foot)}</bdi>`;
+ $("q").placeholder=x.search;$("q").setAttribute("aria-label",x.search);$("qx").setAttribute("aria-label",x.clear);if($("q").value.trim())search();
 }
 function route(){
  const id=location.hash.slice(1);les=LS.find(l=>l.id==id)||null;
+ if(jump&&!les)jump=null;
  frame();$("brand").style.visibility=les?"visible":"hidden";les?openLesson():home();window.scrollTo({top:0});
 }
 function home(){
@@ -65,15 +70,33 @@ function openLesson(){
  <h1>${esc(tx(les.title))} <bdi dir="ltr" class="de-w">${esc(les.de)}</bdi></h1>
  <p class="sub">${esc(tx(les.sub))}</p>
  <div class="levels" id="levels"></div>
- <div class="card"><div class="top"><span id="ttl"></span><bdi id="prog" class="ltr" dir="ltr"></bdi></div><div class="bar"><i id="barI"></i></div><div id="body"></div></div>
+ <div class="card" id="card"><div class="top"><span id="ttl"></span><bdi id="prog" class="ltr" dir="ltr"></bdi></div><div class="bar"><i id="barI"></i></div><div id="body"></div></div>
  <div class="tools"><label><input type="checkbox" id="shuf"> <span>${esc(x.shuf)}</span></label><button class="link" id="reset">${esc(x.reset)}</button><button class="link ruleBtn" id="toRule">${esc(x.rule)}</button></div>
  <h2 id="rule">${esc(tx(les.reviewTitle))}</h2>${les.review(lang,H)}`;
  $("back").onclick=()=>{location.hash=""};
  $("toRule").onclick=()=>$("rule").scrollIntoView({behavior:"smooth"});
  $("shuf").checked=!!st.shuf;$("shuf").onchange=()=>{st.shuf=$("shuf").checked;save();start(lv)};
  $("reset").onclick=()=>{st.p[les.id]=P={};save();start(0)};
- start(les.levels[P.lv]?P.lv:0);
+ if(jump){const j=jump;jump=null;start(j.lv);const p=order.indexOf(j.q);if(p>0){i=p;show()}$("card").scrollIntoView()}
+ else start(les.levels[P.lv]?P.lv:0);
 }
+/* search: lessons (any language) and exercise sentences (German, accents ignored) */
+let jump=null;
+const fold=s=>String(s).toLowerCase().replace(/ß/g,"ss").normalize("NFD").replace(/[\u0300-\u036f\u064b-\u065f]/g,"").replace(/[{}]/g,"");
+function search(){
+ const raw=$("q").value.trim(),x=t();$("qx").hidden=!raw;
+ if(!raw){$("results").hidden=true;$("app").hidden=false;return}
+ const f=fold(raw),words=f.split(/\s+/),hit=s=>{const v=fold(s);return words.every(w=>v.includes(w))};
+ const ls=LS.filter(L=>hit([L.de,...Object.values(L.title),...Object.values(L.sub),...L.levels.map(l=>typeof l.name=="string"?l.name:Object.values(l.name).join(" "))].join(" ")));
+ const ex=[];LS.forEach(L=>L.levels.forEach((l,k)=>l.q.forEach((q,j)=>{const s=q[0].replace("___",l.w||l.word?" ___ ":q[1]);if(hit(s)||hit(q[0].replace("___",q[1])))ex.push({L,k,j,l,q})})));
+ const MAX=40;
+ let h=`<h2>${esc(x.res)}</h2>`;
+ if(!ls.length&&!ex.length)h+=`<p class="sub">${esc(x.noRes)} «<bdi>${esc(raw)}</bdi>».</p>`;
+ if(ls.length)h+=`<h3 class="rh">${esc(x.inLes)}</h3><div class="lessons">${ls.map(L=>`<button class="lesson" data-id="${L.id}"><h3>${esc(tx(L.title))}</h3><div class="dew">${esc(L.de)}</div></button>`).join("")}</div>`;
+ if(ex.length)h+=`<h3 class="rh">${esc(x.inEx)} <bdi dir="ltr" class="cnt">${ex.length}</bdi></h3><ul class="hits">${ex.slice(0,MAX).map(r=>`<li><button class="hit" data-id="${r.L.id}" data-k="${r.k}" data-j="${r.j}"><span class="s${r.l.tf&&r.q[1]=="W"?" wrongS":""}">${sentence(r.q[0],r.q[0].includes("___")?r.q[1]:null,"ok")}</span>${r.l.tf&&r.q[1]=="W"?`<span class="why">${bi(r.q[EX[lang]])}</span>`:""}<span class="where">${esc(tx(r.L.title))} · ${r.k+1}. ${esc(tx(r.l.name))}</span></button></li>`).join("")}</ul>${ex.length>MAX?`<p class="sub">${esc(x.more)}</p>`:""}`;
+ $("results").innerHTML=h;$("results").hidden=false;$("app").hidden=true;
+}
+function clearSearch(){$("q").value="";search()}
 function drawLevels(){
  $("levels").innerHTML=les.levels.map((l,k)=>{const b=P["b"+k];return `<button class="lv${k==lv?" on":""}" data-k="${k}">${k+1}. ${esc(tx(l.name))}${b!=null?` <small><bdi dir="ltr">${b}/${l.q.length}</bdi></small>`:""}</button>`}).join("");
 }
@@ -146,9 +169,17 @@ $("langs").addEventListener("click",ev=>{
  const keep={lv,order,i,sc,wrong,res,fin};openLessonKeep(keep);
 });
 function openLessonKeep(k){openLesson();({lv,order,i,sc,wrong,res,fin}=k);drawLevels();show()}
-$("brand").onclick=()=>{location.hash=""};
+$("brand").onclick=()=>{clearSearch();location.hash=""};
+$("q").addEventListener("input",search);
+$("q").addEventListener("keydown",ev=>{if(ev.key=="Escape")clearSearch()});
+$("qx").onclick=()=>{clearSearch();$("q").focus()};
+$("results").addEventListener("click",ev=>{
+ const h=ev.target.closest(".hit"),c=ev.target.closest(".lesson");if(!h&&!c)return;
+ const id=(h||c).dataset.id;if(h)jump={lv:+h.dataset.k,q:+h.dataset.j};
+ clearSearch();if(location.hash.slice(1)==id)route();else location.hash=id;
+});
 document.addEventListener("keydown",ev=>{
- if(!les||ev.target.tagName=="INPUT")return;
+ if(!les||ev.target.tagName=="INPUT"||!$("results").hidden)return;
  const n=+ev.key,ops=document.querySelectorAll(".op");
  if(!res&&!fin&&n>=1&&n<=ops.length)pick(ops[n-1]);
  else if(ev.key=="Enter"&&res&&$("nx")){ev.preventDefault();$("nx").click()}

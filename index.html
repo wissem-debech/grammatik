@@ -12,10 +12,12 @@
 <div class="wrap">
 <header class="head">
   <button class="brand" id="brand"></button>
+  <div class="search" role="search"><input type="search" id="q" autocomplete="off" spellcheck="false"><button id="qx" class="qx" hidden>×</button></div>
   <div class="langs" id="langs" role="group" aria-label="Language">
     <button data-l="ar" lang="ar">العربية</button><button data-l="fr" lang="fr">Français</button><button data-l="en" lang="en">English</button>
   </div>
 </header>
+<section id="results" hidden></section>
 <main id="app"></main>
 <footer id="foot"></footer>
 </div>

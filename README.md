@@ -81,4 +81,4 @@ In a sentence, `___` marks the gap and `{…}` highlights a phrase. In review ti
 
 ## Copyright
 
-© 2026 وسام دبش — Wissem Debech. All rights reserved.
+© 2026 Wissem Debech. All rights reserved.
