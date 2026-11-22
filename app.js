@@ -9,21 +9,33 @@ R:"صحيح",W:"خطأ",check:"تحقّق",next:"السؤال التالي ←",
 empty:"اكتب إجابة أولًا",answer:"الإجابة",result:"النتيجة",m3:"ممتاز! أتقنت هذا المستوى.",m2:"جيد جدًا! راجع أخطاءك ثم أعد المحاولة.",m1:"راجع الجدول أسفل الصفحة ثم أعد المستوى.",
 mist:"أخطاؤك مع التصحيح:",redoW:"أعد الأسئلة الخاطئة فقط",redoA:"أعد المستوى كاملًا",nextL:"المستوى التالي:",shuf:"ترتيب عشوائي للأسئلة",reset:"مسح نتائج هذا الدرس",
 foot:"© 2026 Wissem Debech. جميع الحقوق محفوظة.",
-search:"ابحث عن درس أو كلمة…",clear:"مسح البحث",res:"نتائج البحث",inLes:"الدروس",inEx:"في التمارين",noRes:"لا توجد نتائج لـ",more:"اكتب كلمة أدق لرؤية المزيد."},
+search:"ابحث عن درس أو كلمة…",
+iT:"ثبّت التطبيق على جهازك",iP:"افتح «مراجعة Grammatik» بلمسة واحدة من شاشة هاتفك أو سطح مكتب حاسوبك، كأي تطبيق، ويعمل حتى دون إنترنت.",iGo:"تثبيت التطبيق",iNo:"لاحقًا",iBtn:"تثبيت التطبيق",
+iIOS:["في Safari، اضغط زرّ المشاركة (مربّع فيه سهم للأعلى).","اختر «إضافة إلى الشاشة الرئيسية».","اضغط «إضافة»."],
+iMac:["في Safari، افتح قائمة «ملف».","اختر «إضافة إلى Dock»."],
+iOther:["افتح قائمة المتصفح (⋮ أو ⋯).","اختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية».","على الحاسوب يمكنك أيضًا الضغط على أيقونة التثبيت في شريط العنوان."],clear:"مسح البحث",res:"نتائج البحث",inLes:"الدروس",inEx:"في التمارين",noRes:"لا توجد نتائج لـ",more:"اكتب كلمة أدق لرؤية المزيد."},
 fr:{dir:"ltr",title:"Révision Grammatik",app:"Révision",sub:"Révise la grammaire allemande leçon par leçon : des tableaux clairs, puis des exercices du plus facile au plus difficile, avec une correction et une explication immédiates.",
 lessons:"Leçons",ex:"exercices",lvls:"niveaux",done:"Réussi",soon:"De nouvelles leçons arrivent bientôt.",back:"← Toutes les leçons",rule:"La règle ↓",
 R:"Vrai",W:"Faux",check:"Vérifier",next:"Question suivante →",seeRes:"Voir le résultat",ok:"✓ Bravo, c'est juste !",yours:"✗ Ta réponse :",right:"La bonne :",
 empty:"Écris d'abord une réponse",answer:"Réponse",result:"Résultat",m3:"Excellent ! Tu maîtrises ce niveau.",m2:"Très bien ! Revois tes erreurs, puis réessaie.",m1:"Revois les tableaux en bas de la page, puis refais le niveau.",
 mist:"Tes erreurs, avec la correction :",redoW:"Refaire seulement les questions ratées",redoA:"Refaire tout le niveau",nextL:"Niveau suivant :",shuf:"Questions dans un ordre aléatoire",reset:"Effacer les résultats de cette leçon",
 foot:"© 2026 Wissem Debech. Tous droits réservés.",
-search:"Chercher une leçon, un mot…",clear:"Effacer la recherche",res:"Résultats de la recherche",inLes:"Leçons",inEx:"Dans les exercices",noRes:"Aucun résultat pour",more:"Précise ta recherche pour en voir plus."},
+search:"Chercher une leçon, un mot…",
+iT:"Installe l'application sur ton appareil",iP:"Ouvre « Révision Grammatik » d'un seul geste depuis l'écran de ton téléphone ou le bureau de ton ordinateur, comme une vraie application, même sans Internet.",iGo:"Installer l'application",iNo:"Plus tard",iBtn:"Installer l'application",
+iIOS:["Dans Safari, touche le bouton Partager (le carré avec une flèche vers le haut).","Choisis « Sur l'écran d'accueil ».","Touche « Ajouter »."],
+iMac:["Dans Safari, ouvre le menu « Fichier ».","Choisis « Ajouter au Dock »."],
+iOther:["Ouvre le menu du navigateur (⋮ ou ⋯).","Choisis « Installer l'application » ou « Ajouter à l'écran d'accueil ».","Sur ordinateur, tu peux aussi cliquer sur l'icône d'installation dans la barre d'adresse."],clear:"Effacer la recherche",res:"Résultats de la recherche",inLes:"Leçons",inEx:"Dans les exercices",noRes:"Aucun résultat pour",more:"Précise ta recherche pour en voir plus."},
 en:{dir:"ltr",title:"Grammatik review",app:"Review",sub:"Review German grammar one lesson at a time: clear tables, then exercises from easiest to hardest, with an instant correction and explanation for every answer.",
 lessons:"Lessons",ex:"exercises",lvls:"levels",done:"Done",soon:"New lessons are coming soon.",back:"← All lessons",rule:"The rule ↓",
 R:"Right",W:"Wrong",check:"Check",next:"Next question →",seeRes:"See the result",ok:"✓ Well done, that's right!",yours:"✗ Your answer:",right:"Correct:",
 empty:"Type an answer first",answer:"Answer",result:"Result",m3:"Excellent! You've mastered this level.",m2:"Very good! Review your mistakes, then try again.",m1:"Review the tables at the bottom of the page, then redo the level.",
 mist:"Your mistakes, corrected:",redoW:"Redo only the questions I got wrong",redoA:"Redo the whole level",nextL:"Next level:",shuf:"Shuffle the questions",reset:"Clear this lesson's results",
 foot:"© 2026 Wissem Debech. All rights reserved.",
-search:"Search lessons or words…",clear:"Clear search",res:"Search results",inLes:"Lessons",inEx:"In the exercises",noRes:"No results for",more:"Type a more specific word to see more."}};
+search:"Search lessons or words…",
+iT:"Install the app on your device",iP:"Open “Grammatik review” with one tap from your phone's home screen or your computer's desktop, like any app — it even works offline.",iGo:"Install the app",iNo:"Later",iBtn:"Install the app",
+iIOS:["In Safari, tap the Share button (the square with an arrow pointing up).","Choose “Add to Home Screen”.","Tap “Add”."],
+iMac:["In Safari, open the File menu.","Choose “Add to Dock”."],
+iOther:["Open the browser menu (⋮ or ⋯).","Choose “Install app” or “Add to Home screen”.","On a computer, you can also click the install icon in the address bar."],clear:"Clear search",res:"Search results",inLes:"Lessons",inEx:"In the exercises",noRes:"No results for",more:"Type a more specific word to see more."}};
 const EX={ar:2,fr:3,en:4};
 const LS=window.LESSONS||[];
 
@@ -49,9 +61,10 @@ const best=L=>{const p=st.p[L.id]||{};return L.levels.reduce((a,v,k)=>a+(p["b"+k
 function frame(){
  const x=t();document.documentElement.lang=lang;document.documentElement.dir=x.dir;
  document.title=les?tx(les.title)+" · "+x.title:x.title;
- document.querySelectorAll("#langs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l==lang));
+ document.querySelectorAll("#langs button,#mlangs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l==lang));
  $("brand").innerHTML=lang=="en"?`<span>Grammatik</span> ${x.app}`:`${x.app} <span>Grammatik</span>`;
  $("foot").innerHTML=`<bdi>${esc(x.foot)}</bdi>`;
+ $("instBtn").textContent=x.iBtn;if(!$("inst").hidden)instFill();
  $("q").placeholder=x.search;$("q").setAttribute("aria-label",x.search);$("qx").setAttribute("aria-label",x.clear);if($("q").value.trim())search();
 }
 function route(){
@@ -163,11 +176,12 @@ $("app").addEventListener("click",ev=>{
  const b=ev.target.closest(".lv");if(b){start(+b.dataset.k);return}
  const o=ev.target.closest(".op");if(o)pick(o);
 });
-$("langs").addEventListener("click",ev=>{
- const b=ev.target.closest("button");if(!b||b.dataset.l==lang)return;lang=b.dataset.l;st.lang=lang;save();
+const onLang=ev=>{
+ const b=ev.target.closest("button[data-l]");if(!b||b.dataset.l==lang)return;lang=b.dataset.l;st.lang=lang;save();
  frame();if(!les)return home();
  const keep={lv,order,i,sc,wrong,res,fin};openLessonKeep(keep);
-});
+};
+$("langs").addEventListener("click",onLang);$("mlangs").addEventListener("click",onLang);
 function openLessonKeep(k){openLesson();({lv,order,i,sc,wrong,res,fin}=k);drawLevels();show()}
 $("brand").onclick=()=>{clearSearch();location.hash=""};
 $("q").addEventListener("input",search);
@@ -186,4 +200,30 @@ document.addEventListener("keydown",ev=>{
 });
 window.addEventListener("hashchange",route);
 route();
+
+/* install as an app: first-visit dialog + footer button */
+let deferred=null;
+const standalone=()=>matchMedia("(display-mode: standalone)").matches||navigator.standalone===true;
+const framed=(()=>{try{return window.self!==window.top}catch(e){return true}})();
+const ua=navigator.userAgent,isIOS=/iPad|iPhone|iPod/.test(ua)||(navigator.platform=="MacIntel"&&navigator.maxTouchPoints>1),isMacSafari=!isIOS&&/Macintosh/.test(ua)&&/Safari/.test(ua)&&!/Chrome|Chromium|Edg|Firefox/.test(ua);
+function instFill(){
+ const x=t();$("instT").textContent=x.iT;$("instP").textContent=x.iP;$("instNo").textContent=x.iNo;$("instGo").textContent=x.iGo;
+ $("instGo").hidden=!deferred;
+ const steps=deferred?[]:isIOS?x.iIOS:isMacSafari?x.iMac:x.iOther;
+ $("instSteps").innerHTML=steps.map(s=>`<li>${esc(s)}</li>`).join("");$("instSteps").hidden=!steps.length;
+}
+function instOpen(){instFill();$("inst").hidden=false;($("instGo").hidden?$("instNo"):$("instGo")).focus()}
+function instClose(){$("inst").hidden=true;st.instSeen=1;save()}
+$("instNo").onclick=instClose;
+$("inst").addEventListener("click",ev=>{if(ev.target.id=="inst")instClose()});
+document.addEventListener("keydown",ev=>{if(ev.key=="Escape"&&!$("inst").hidden)instClose()});
+$("instGo").onclick=async()=>{if(!deferred)return;deferred.prompt();try{await deferred.userChoice}catch(e){}deferred=null;instClose()};
+$("instBtn").onclick=instOpen;
+window.addEventListener("beforeinstallprompt",ev=>{ev.preventDefault();deferred=ev;if(!$("inst").hidden)instFill()});
+window.addEventListener("appinstalled",()=>{deferred=null;$("instBtn").hidden=true;if(!$("inst").hidden)instClose()});
+if(!framed&&!standalone()){
+ $("instBtn").hidden=false;
+ if(!st.instSeen)setTimeout(()=>{if(!standalone())instOpen()},1500);
+}
+if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol)&&!framed){navigator.serviceWorker.register("sw.js").catch(()=>{})}
 }

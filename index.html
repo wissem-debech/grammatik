@@ -7,6 +7,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1f4fbf">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Grammatik">
 </head>
 <body>
 <div class="wrap">
@@ -19,7 +26,18 @@
 </header>
 <section id="results" hidden></section>
 <main id="app"></main>
-<footer id="foot"></footer>
+<footer><span id="foot"></span> <button class="link" id="instBtn" hidden></button></footer>
+<div class="modal" id="inst" hidden role="dialog" aria-modal="true" aria-labelledby="instT">
+  <div class="box">
+    <div class="langs mlangs" id="mlangs"><button data-l="ar" lang="ar">العربية</button><button data-l="fr" lang="fr">Français</button><button data-l="en" lang="en">English</button></div>
+    <img src="icons/icon-192.png" alt="" width="72" height="72">
+    <h2 id="instT"></h2>
+    <p id="instP"></p>
+    <ol id="instSteps"></ol>
+    <button class="btn" id="instGo" hidden></button>
+    <button class="btn alt" id="instNo"></button>
+  </div>
+</div>
 </div>
 <!-- Lessons: add one <script> line per lesson file, in the order they should appear -->
 <script src="lessons/adjektivendungen.js"></script>

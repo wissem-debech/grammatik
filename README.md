@@ -21,6 +21,8 @@ More lessons will be added one by one, in the same format.
 - A shuffle option for the questions
 - Your best score on each level is saved in the browser
 - Works on phones, with light and dark mode
+- Installable as an app on phones, tablets and computers, and works offline. A window explains how to install it on the first visit, and a button in the footer opens it again
+- Search across all lessons and exercise sentences
 - Keyboard shortcuts: number keys choose an option, Enter moves to the next question
 
 ## Run it
@@ -33,6 +35,8 @@ To put it online, turn on **GitHub Pages** in the repository's settings: Setting
 
 ```
 index.html                    page shell; one <script> line per lesson
+manifest.webmanifest, sw.js   install as an app, offline support
+icons/                        app icons
 style.css                     shared design
 app.js                        shared engine: home page, levels, correction, languages
 lessons/adjektivendungen.js   lesson 1
@@ -78,6 +82,8 @@ In a sentence, `___` marks the gap and `{…}` highlights a phrase. In review ti
 ```html
 <script src="lessons/praepositionen.js"></script>
 ```
+
+3. Add the file to the `SHELL` list in `sw.js` and raise the cache name (`grammatik-v2`, …) so the lesson also works offline.
 
 ## Copyright
 
