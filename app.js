@@ -44,7 +44,7 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",
 const iso=m=>`<bdi dir="ltr" class="ltr"${m.length<20?' style="white-space:nowrap"':""}>${m.replace(/-(?=[a-z])/g,"‑")}</bdi>`;
 const H={esc,de:s=>s.replace(/\[\[(.+?)\]\]/g,(_,m)=>iso(m))};
 const bi=s=>lang=="ar"?esc(s).replace(/[-+]?[A-Za-zÄÖÜäöüß]+(?:[ \-+\/:]+[-+]?[A-Za-zÄÖÜäöüß]+)*/g,iso):esc(s);
-const norm=s=>s.trim().toLowerCase().replace(/ß/g,"ss").replace(/\s+/g," ");
+const norm=s=>s.trim().toLowerCase().replace(/ß/g,"ss").replace(/ä/g,"ae").replace(/ö/g,"oe").replace(/ü/g,"ue").replace(/\s+/g," ");
 
 let st={};try{st=JSON.parse(localStorage.getItem("grammatik")||"{}")}catch(e){}
 try{const old=JSON.parse(localStorage.getItem("adjst")||"null");if(old&&!st.p){st.lang=old.lang;st.shuf=old.shuf;st.p={adjektivendungen:old}}}catch(e){}
@@ -123,6 +123,9 @@ function sentence(s,fill,cls){
  const h=esc(s).replace(/\{(.+?)\}/,'<span class="hl">$1</span>');
  return h.replace("___",`<span class="gap ${cls||""}" id="gap">${fill?esc(fill):"&nbsp;?&nbsp;"}</span>`);
 }
+const optCache={};
+function optsFor(l,j){const q=l.q[j];if(!q[6])return l.o;const k=les.id+"|"+lv+"|"+j;
+ if(!optCache[k]){const a=q[6].slice();for(let n=a.length-1;n>0;n--){const r=Math.floor(Math.random()*(n+1));[a[n],a[r]]=[a[r],a[n]]}optCache[k]=a}return optCache[k]}
 function counter(){$("prog").textContent=(i+1)+" / "+order.length+"  ·  ✓ "+sc}
 function show(){
  const l=les.levels[lv],x=t();$("ttl").textContent=(lv+1)+". "+tx(l.name);
@@ -133,7 +136,7 @@ function show(){
  let html=`<p class="task">${esc(tx(l.task))}</p><div class="de">${sentence(s)}</div>`;
  if(h)html+=`<p class="hint">[ ${esc(h)} ]</p>`;
  if(l.w)html+=`<input type="text" id="txt" placeholder="…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="${esc(x.answer)}"><p class="err" id="err"></p><button class="btn" id="chk">${esc(x.check)}</button>`;
- else html+=`<div class="opts">${l.o.map(o=>`<button class="op${l.word?" word":""}" data-o="${esc(o)}">${esc(lab(l,o))}</button>`).join("")}</div>`;
+ else html+=`<div class="opts">${optsFor(l,order[i]).map(o=>`<button class="op${l.word?" word":""}${q[6]?" verb":""}" data-o="${esc(o)}">${esc(lab(l,o))}</button>`).join("")}</div>`;
  html+=`<div class="fb" id="fb"></div><button class="btn" id="nx" style="display:none">${esc(i==order.length-1?x.seeRes:x.next)}</button>`;
  $("body").innerHTML=html;
  if(l.w){const tb=$("txt");tb.addEventListener("input",()=>$("err").textContent="");

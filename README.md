@@ -9,6 +9,7 @@ The interface and every explanation are available in **Arabic, French and Englis
 | # | Lesson | Levels | Exercises |
 |---|--------|--------|-----------|
 | 1 | Adjektivendungen — adjective endings (Nominativ, Akkusativ, Dativ) | 7 | 92 |
+| 2 | Präteritum — the simple past (regular, irregular, mixed, sein/haben, modal and separable verbs) | 7 | 88 |
 
 More lessons will be added one by one, in the same format.
 
@@ -73,7 +74,8 @@ Level types:
 - **Endings:** `o: [...]`. Options are shown with a dash (`-en`).
 - **Words:** `o: [...]` with `word: 1`. Options are shown as they are, for example case names.
 - **Right or wrong:** `o: ["R", "W"]` with `word: 1, tf: 1`.
-- **Writing:** `w: 1`. The student types the answer. Add a hint as the 6th item of each question.
+- **Writing:** `w: 1`. The student types the answer. Add a hint as the 6th item of each question. Umlauts can be typed as ae / oe / ue.
+- **Own choices per question:** `word: 1`, and give each question its options as the 7th item (the 6th item, the hint, can be the infinitive). The options are shuffled automatically.
 
 In a sentence, `___` marks the gap and `{…}` highlights a phrase. In review tips, wrap German words in `[[…]]` so they display correctly inside Arabic text.
 

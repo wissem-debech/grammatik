@@ -121,3 +121,8 @@ td.g{font:600 12px Cairo;color:var(--soft)}
 footer .link{min-height:32px;margin-inline-start:6px}
 .modal .mlangs{justify-content:center;margin:0 0 14px}
 .modal .mlangs button{min-height:36px;font-size:13px;padding:0 12px}
+.op.word.verb{font:700 21px Kalam,cursive;direction:ltr}
+.vlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:4px 14px;direction:ltr;font:400 17px Kalam,cursive;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:14px;margin-top:14px}
+.vlist span b{color:var(--blue);font-weight:700}
+.vlist .mx b{color:var(--red)}
+.tb h3 small{display:block;font:600 12px Cairo;color:var(--soft)}
