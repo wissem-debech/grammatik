@@ -43,7 +43,7 @@ review(lang,H){
  "<b>Modal verbs lose the umlaut:</b> [[können → konnte, müssen → musste, dürfen → durfte, mögen → mochte]]. Careful: [[könnte]] with an umlaut means “could / would” (Konjunktiv II), not the past.",
  "<b>Separable verbs:</b> the prefix goes to the end of the sentence: [[aufstehen → Ich stand um 7 Uhr auf.]]",
  "<b>When is it used?</b> In stories, written texts and the news. In speech, mostly with sein, haben and modal verbs ([[ich war, ich hatte, ich konnte]]); for other verbs, speech uses the Perfekt."]}[lang];
- return `<div class="tables">${T.map(([n,sub,vs,rows])=>`<div class="tb"><h3>${n}<small>${H.esc(sub)}</small></h3><table><thead><tr><th></th><th>${vs[0]}</th><th>${vs[1]}</th></tr></thead><tbody>${rows.map((r,k)=>`<tr><td class="g">${P[k]}</td><td>${cell(r[0])}</td><td>${cell(r[1])}</td></tr>`).join("")}</tbody></table></div>`).join("")}</div>
+ return `<div class="tables">${T.map(([n,sub,vs,rows])=>`<div class="tb"><h3>${n}${sub!=n?`<small>${H.esc(sub)}</small>`:""}</h3><table><thead><tr><th></th><th>${vs[0]}</th><th>${vs[1]}</th></tr></thead><tbody>${rows.map((r,k)=>`<tr><td class="g">${P[k]}</td><td>${cell(r[0])}</td><td>${cell(r[1])}</td></tr>`).join("")}</tbody></table></div>`).join("")}</div>
 <h3 class="rh">${H.esc(L.list)}</h3>
 <div class="vlist">${V.map(v=>`<span${v[2]?' class="mx"':""}>${v[0]} → <b>${v[1]}</b></span>`).join("")}</div>
 <p class="sub" style="margin-top:6px">${H.esc(L.mx)}</p>
