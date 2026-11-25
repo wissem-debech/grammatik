@@ -10,6 +10,7 @@ The interface and every explanation are available in **Arabic, French and Englis
 |---|--------|--------|-----------|
 | 1 | Adjektivendungen — adjective endings (Nominativ, Akkusativ, Dativ) | 7 | 92 |
 | 2 | Präteritum — the simple past (regular, irregular, mixed, sein/haben, modal and separable verbs) | 7 | 88 |
+| 3 | Komparativ und Superlativ — klein, kleiner, am kleinsten (umlaut, -esten, irregular forms, als / wie) | 7 | 89 |
 
 More lessons will be added one by one, in the same format.
 
